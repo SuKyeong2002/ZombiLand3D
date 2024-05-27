@@ -137,7 +137,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0e51378cb080d5f4fb9ee61df55d3a3a, type: 3}
       propertyPath: m_Name
-      value: Zombi2
+      value: pfZombi2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0e51378cb080d5f4fb9ee61df55d3a3a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1444076148323874344, guid: 0e51378cb080d5f4fb9ee61df55d3a3a, type: 3}
       propertyPath: m_Materials.Array.data[0]
