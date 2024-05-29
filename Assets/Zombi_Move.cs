@@ -7,7 +7,7 @@ public class Zombi_Move : MonoBehaviour
 {
     Transform playerPos;
     float dist;
-    float detectDist = 25.0f;
+    float detectDist = 20.0f;
 
     void Start()
     {

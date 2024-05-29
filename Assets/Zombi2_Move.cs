@@ -7,11 +7,13 @@ public class Zombi2_Move : MonoBehaviour
 {
     Transform playerPos;
     float dist;
-    float detectDist = 25.0f;
+    float detectDist = 20.0f;
+    int shotCnt = 0;
+    public GameObject pfDestroyFx;
 
     void Start()
     {
-        playerPos = GameObject.Find("Player2").GetComponent<Transform>();
+        playerPos = GameObject.Find("Player").GetComponent<Transform>();
     }
 
     void Update()
@@ -20,13 +22,29 @@ public class Zombi2_Move : MonoBehaviour
 
         if (dist < detectDist)
         {
-            GetComponent<Animator>().SetBool("IsWalk", true);
+            GetComponent<Animator>().SetBool("isWalk", true);
             GetComponent<NavMeshAgent>().SetDestination(playerPos.position);
         }
         else if (dist > detectDist)
         {
-            GetComponent<Animator>().SetBool("IsWalk", false);
+            GetComponent<Animator>().SetBool("isWalk", false);
             GetComponent<NavMeshAgent>().SetDestination(transform.position);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Bullet")
+        {
+            shotCnt += 1;
+            GetComponent<AudioSource>().Play();
+            if (shotCnt == 3)
+            {
+                gameObject.SetActive(false);
+                Destroy(other.gameObject);
+                shotCnt = 0;
+                Instantiate(pfDestroyFx, transform.position, transform.rotation);
+            }
         }
     }
 }
