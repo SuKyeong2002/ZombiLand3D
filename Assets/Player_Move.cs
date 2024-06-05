@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Move : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class Player_Move : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -21,6 +22,11 @@ public class Player_Move : MonoBehaviour
         if (other.gameObject.tag == "Zombi")
         {
             damage.hpGage -= 0.2f;
+            if (damage.hpGage <= 0.0f)
+            {
+                Destroy(gameObject);
+                SceneManager.LoadScene("EndGame");
+            }
         }
     }
 }
