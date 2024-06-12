@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 1724720634}
   - component: {fileID: 1724720633}
   m_Layer: 5
-  m_Name: RestartButton
+  m_Name: EndtButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -612,7 +612,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1724720633}
-        m_TargetAssemblyTypeName: RestartButton_Ctrl, Assembly-CSharp
+        m_TargetAssemblyTypeName: EndButton_Ctrl, Assembly-CSharp
         m_MethodName: EndGame
         m_Mode: 1
         m_Arguments:

@@ -12,7 +12,8 @@ public class StartButton_Ctrl : MonoBehaviour
 
     void Start()
     {
-
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     void Update()
