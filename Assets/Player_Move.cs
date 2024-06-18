@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 public class Player_Move : MonoBehaviour
 {
     HPgage_Ctrl damage;
+    public GameObject key;
+    public GameObject ui_key;
 
     void Start()
     {
         damage = GameObject.Find("HPgage").GetComponent<HPgage_Ctrl>();
+        ui_key.SetActive(false);
     }
 
     void Update()
@@ -44,9 +47,15 @@ public class Player_Move : MonoBehaviour
             damage.hpGage -= 0.1f;
         }
 
-        if (other.gameObject.tag == "Key")
+        if (other.gameObject.tag == "Girlfriend")
         {
             SceneManager.LoadScene("SuccessGame");
+        }
+
+        if (other.gameObject.tag == "Key")
+        {
+            other.gameObject.SetActive(false);
+            ui_key.SetActive(true);
         }
     }
 }

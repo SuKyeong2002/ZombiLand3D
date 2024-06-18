@@ -38,6 +38,12 @@ public class Zombi2_Move : MonoBehaviour
         {
             shotCnt += 1;
             GetComponent<AudioSource>().Play();
+
+            if (shotCnt == 2)
+            {
+                GetComponent<Animator>().SetBool("isDeath", true);
+            }
+                
             if (shotCnt == 3)
             {
                 gameObject.SetActive(false);
