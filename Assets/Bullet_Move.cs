@@ -11,7 +11,7 @@ public class Bullet_Move : MonoBehaviour
     {
         score = GameObject.Find("ScoreText").GetComponent<Score_Ctrl>();
         GetComponent<Rigidbody>().AddForce(transform.forward * speed * Time.deltaTime, ForceMode.Impulse);
-        Destroy(gameObject, 3.0f);
+        Destroy(gameObject, 1.0f);
     }
 
     void Update()

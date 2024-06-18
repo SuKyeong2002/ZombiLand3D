@@ -20,11 +20,11 @@ public class Zombi_Move : MonoBehaviour
 
         if(dist < detectDist)
         {
-            GetComponent<Animator>().SetBool("IsWalk", true);
+            GetComponent<Animator>().SetBool("isWalk", true);
             GetComponent<NavMeshAgent>().SetDestination(playerPos.position);
         } else if (dist > detectDist)
         {
-            GetComponent<Animator>().SetBool("IsWalk", false);
+            GetComponent<Animator>().SetBool("isWalk", false);
             GetComponent<NavMeshAgent>().SetDestination(transform.position);
         }
     }

@@ -28,5 +28,25 @@ public class Player_Move : MonoBehaviour
                 SceneManager.LoadScene("EndGame");
             }
         }
+
+        if (other.gameObject.tag == "Water")
+        {
+            damage.hpGage += 0.2f;
+        }
+
+        if (other.gameObject.tag == "Brick")
+        {
+            damage.hpGage -= 0.1f;
+        }
+
+        if (other.gameObject.tag == "Back")
+        {
+            damage.hpGage -= 0.1f;
+        }
+
+        if (other.gameObject.tag == "Key")
+        {
+            SceneManager.LoadScene("SuccessGame");
+        }
     }
 }
