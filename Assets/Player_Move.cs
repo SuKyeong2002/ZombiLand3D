@@ -47,7 +47,7 @@ public class Player_Move : MonoBehaviour
             damage.hpGage -= 0.1f;
         }
 
-        if (other.gameObject.tag == "Girlfriend")
+        if (other.gameObject.tag == "GirlFriend")
         {
             SceneManager.LoadScene("SuccessGame");
         }
